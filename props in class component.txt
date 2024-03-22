@@ -1,0 +1,37 @@
+//App.js......................................
+
+
+import Student from './Student'
+import './App.css';
+
+function App() {
+  return (
+    <div>
+    <h1>props</h1>
+    <Student name="mohini" email= "mohini@gmail.com"></Student>
+    <Student name="mina" email= "mina@gmail.com"></Student>
+    <Student name="gita" email= "gita@gmail.com"></Student>
+    </div>
+  );
+}
+
+export default App;
+
+//Student.js.....................................
+
+import React from "react";
+
+export default class Student extends React.Component{
+
+
+    render(){
+        console.log(this.props)
+
+        return(
+            <div style={{backgroundColor:"skyblue",margin:20}}>
+            <h1> Hello! {this.props.name} </h1>
+            <h3>{this.props.email}</h3>
+             </div>
+        )
+    }
+}

@@ -1,0 +1,45 @@
+App.js..............
+
+import Student from './Student'
+import './App.css';
+import React from 'react';
+
+class App extends React.Component {
+
+  constructor(){
+    super();
+    this.state={name:"mohini"}
+  }
+render(){
+  return(
+    <div className='App'>
+      <h1>props!</h1>
+      <Student name={this.state.name} email="mohini1@gmail.com"></Student>
+      <button onClick={()=>this.setState({name:"Gehlod"})}>update data</button>
+    </div>
+  )
+}
+ 
+}
+
+export default App;
+
+
+//Student.js...............................................
+
+import React from "react";
+
+export default class Student extends React.Component{
+
+
+    render(){
+        console.log(this.props)
+
+        return(
+            <div style={{backgroundColor:"skyblue",margin:20}}>
+            <h1> Hello! {this.props.name} </h1>
+            <h3>{this.props.email}</h3>
+             </div>
+        )
+    }
+}
